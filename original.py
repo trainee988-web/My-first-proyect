@@ -216,7 +216,7 @@ if Audio_fill is not None:
 
                 notes_slide:
                 Full, natural speaker notes written as if a real presenter were explaining the slide aloud.
-                *** THE NOTES MUST BE IN THE SAME LANGUAGE AS THE TRANSCRIPT ***
+                 THE NOTES MUST BE IN THE SAME LANGUAGE AS THE TRANSCRIPT
 
                 5. FORMATTING RULES FOR "PRETTIER" SLIDES
                 - Use Emojis (🔹, 🔸, 🚀, 💡, ✅) as bullet points instead of simple dots.
