@@ -221,7 +221,7 @@ if Audio_fill is not None:
                 5. FORMATTING RULES FOR "PRETTIER" SLIDES
                 - Use Emojis (🔹, 🔸, 🚀, 💡, ✅) as bullet points instead of simple dots.
                 - ALWAYS bold the key concept at the start of a bullet point (e.g., **Efficiency:**).
-                - Keep bullet points concise (maximum 2 lines per point).
+                - Keep bullet points concise (maximum 4 lines per point).
 
                 6. IF NO CLEAR INSTRUCTION EXISTS
                 Generate ONLY ONE slide stating that an explicit instruction is required (in the source language).
