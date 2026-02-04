@@ -179,58 +179,58 @@ if Audio_fill is not None:
             
             instruction = f"""
   
-                Analyze the audio transcript: {resultado['text']} and generate ONLY clearly separated slides following these STRICT rules.
+            Analyze the audio transcript: {resultado['text']} and generate ONLY clearly separated slides following these STRICT rules.
 
-                !!! CRITICAL: LANGUAGE ENFORCEMENT !!!
-                1. FIRST, analyze the input text to identify the source language exactly.
-                2. YOUR OUTPUT MUST BE 100% IN THAT IDENTIFIED SOURCE LANGUAGE.
-                3. IF the audio is in English -> Generate slides/notes in ENGLISH.
-                4. IF the audio is in French -> Generate slides/notes in FRENCH.
-                5. DO NOT translate to Spanish unless the audio is actually in Spanish.
+            !!! CRITICAL: LANGUAGE ENFORCEMENT !!!
+            1. FIRST, analyze the input text to identify the source language exactly.
+            2. YOUR OUTPUT MUST BE 100% IN THAT IDENTIFIED SOURCE LANGUAGE.
+            3. IF the audio is in English -> Generate slides/notes in ENGLISH.
+            4. IF the audio is in French -> Generate slides/notes in FRENCH.
+            5. DO NOT translate to Spanish unless the audio is actually in Spanish.
 
-                === BEGIN DESIGN & CONTENT INSTRUCTIONS ===
+            === BEGIN DESIGN & CONTENT INSTRUCTIONS ===
 
-                1. GOAL
-                Create a visually engaging, well-structured presentation based on the audio.
-                Avoid walls of text. Use "Visual Markdown" to make it look professional.
+            1. GOAL
+            Create a visually engaging, well-structured presentation based on the audio.
+            Avoid walls of text. Use "Visual Markdown" to make it look professional.
 
-                2. INSTRUCTION DETECTION
-                Determine whether the audio contains a clear instruction to create content.
+            2. INSTRUCTION DETECTION
+            Determine whether the audio contains a clear instruction to create content.
 
-                3. IF A CLEAR INSTRUCTION EXISTS
-                Generate a presentation with a MINIMUM of 5 SLIDES.
-                Each slide must be clearly separated using the separator below.
+            3. IF A CLEAR INSTRUCTION EXISTS
+            Generate a presentation with a MINIMUM of 5 SLIDES.
+            Each slide must be clearly separated using the separator below.
 
-                --- SLIDE N ---
+            --- SLIDE N ---
 
-                4. SLIDE STRUCTURE (MANDATORY & VISUAL)
-                Each slide MUST follow this exact internal structure to ensure it looks organized and colorful:
+            4. SLIDE STRUCTURE (MANDATORY & VISUAL)
+            Each slide MUST follow this exact internal structure. 
+            DO NOT include visual descriptions or image prompts inside the slide body.
+            Structure:
 
-                # [INSERT RELEVANT EMOJI] TITLE OF THE SLIDE
-                
-                **Visual Concept:** [Describe in 1 sentence a suggestion for an image or icon that fits this slide, e.g., "A futuristic robot shaking hands with a human"]
+            # [INSERT RELEVANT EMOJI] TITLE OF THE SLIDE
 
-                🔹 **[Keyword or Main Idea]:** [Explanation text]
-                🔸 **[Keyword or Main Idea]:** [Explanation text]
-                🔹 **[Keyword or Main Idea]:** [Explanation text]
+            🔹 **[Keyword or Main Idea]:** [Explanation text]
+            🔸 **[Keyword or Main Idea]:** [Explanation text]
+            🔹 **[Keyword or Main Idea]:** [Explanation text]
 
-                notes_slide:
-                Full, natural speaker notes written as if a real presenter were explaining the slide aloud.
-                 THE NOTES MUST BE IN THE SAME LANGUAGE AS THE TRANSCRIPT
+            notes_slide:
+            Full, natural speaker notes written as if a real presenter were explaining the slide aloud.
+            THE NOTES MUST BE IN THE SAME LANGUAGE AS THE TRANSCRIPT.
 
-                5. FORMATTING RULES FOR "PRETTIER" SLIDES
-                - Use Emojis (🔹, 🔸, 🚀, 💡, ✅) as bullet points instead of simple dots.
-                - ALWAYS bold the key concept at the start of a bullet point (e.g., **Efficiency:**).
-                - Keep bullet points concise (maximum 2 lines per point).
+            5. FORMATTING RULES FOR "PRETTIER" SLIDES
+            - Use Emojis (🔹, 🔸, 🚀, 💡, ✅) as bullet points instead of simple dots.
+            - ALWAYS bold the key concept at the start of a bullet point (e.g., **Efficiency:**).
+            - Keep bullet points concise (maximum 2 lines per point).
 
-                6. IF NO CLEAR INSTRUCTION EXISTS
-                Generate ONLY ONE slide stating that an explicit instruction is required (in the source language).
-                That slide MUST also include notes_slide.
+            6. IF NO CLEAR INSTRUCTION EXISTS
+            Generate ONLY ONE slide stating that an explicit instruction is required (in the source language).
+            That slide MUST also include notes_slide.
 
-                7. OUTPUT RESTRICTIONS
-                Speaker notes must appear ONLY inside notes_slide.
-                Do NOT place notes in the slide body.
-                """
+            7. OUTPUT RESTRICTIONS
+            Speaker notes must appear ONLY inside notes_slide.
+            Do NOT place notes, comments, or visual descriptions in the slide body.
+            """
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             answer = modelo_gemini.generate_content(instruction)
             
